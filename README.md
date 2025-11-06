@@ -29,9 +29,16 @@ Desarrollado en el marco del Taller de Tecnologías Web (Examen Final), este sis
 
 ---
 
-## 🚀 Ejecución en Línea (GitHub Pages)
+## 🚀 Ejecución en Línea con GitHub Pages
 
-Dado que este proyecto es estático (HTML, CSS, JS), la forma más fácil y profesional de mostrarlo es a través del servicio gratuito **GitHub Pages**.
+Este proyecto es completamente estático (HTML, CSS, JS), lo que permite publicarlo fácilmente mediante el servicio gratuito y profesional **GitHub Pages**.
+
+ Puedes ver el resultado final haciendo clic en el siguiente enlace:
+
+[🔗 Abrir Carnet Mascotas en GitHub Pages](https://ejts29.github.io/Carnet-Mascotas-Web-Bootstrap-Animaladas-HTML-CSS/index.html)
+
+
+---
 
 ### Ejecución Local
 
