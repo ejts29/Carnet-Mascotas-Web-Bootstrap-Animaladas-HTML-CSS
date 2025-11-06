@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet de Mascotas - Registrar / Contacto</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <div id="div_barra_inicio_padre">
+        <div id="div_barra_inicio" class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-2">
+            
+            <div class="header-text text-center text-md-start mb-2 mb-md-0">
+                <h2 class="title-large">CARNET DE MASCOTAS</h2>
+                <p class="description-small d-none d-md-block">
+                    CARNET es el mejor sitio para llevar el control de tu mascota, ya que es tu mejor aliado.
+                </p>
+            </div>
+
+            <div id="div_link_barra_inicio" class="d-flex align-items-center nav-links flex-wrap justify-content-center">
+                <img src="../img/logo.png" alt="logo" class="logo-small"> 
+                
+                <a href="../index.html">INICIO</a>
+                <a href="index2.html">GALERÍA</a>
+                <a href="index3.html">PERFIL</a>
+                <a href="index4.html">CONTROLES MÉDICOS</a>
+                <a href="index5.html">MEDICAMENTOS</a>
+                <a href="index6.html">TRATAMIENTOS</a>
+                <a href="index7.html">VACUNAS</a>
+                <a href="index8.html">DUEÑO</a>
+                <a href="index9.html">PERFIL DEL DUEÑO</a>
+                <a href="index10.html">REGISTRAR</a>
+
+                <img src="../img/logo.png" alt="logo" class="logo-small">
+            </div>
+        </div>
+    </div>
+    <div id="div_fondo_pagina" class="container-fluid py-5">
+        <div class="container">
+            
+            <div class="text-center mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-md-3 mb-2"><img class="img-fluid logo-small" src="../img/logo.png" alt=""></div>
+                    <div class="col-6 col-md-3 mb-2"><img class="img-fluid logo-small" src="../img/logo.png" alt=""></div>
+                    <div class="col-6 col-md-3 mb-2"><img class="img-fluid logo-small" src="../img/logo.png" alt=""></div>
+                    <div class="col-6 col-md-3 mb-2"><img class="img-fluid logo-small" src="../img/logo.png" alt=""></div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6 text-center">
+                    <h1 class="main-title mb-4">POR FAVOR REGISTRARSE AQUÍ</h1>
+                    
+                    <form id="registerForm" class="p-4 bg-white rounded shadow-sm text-dark">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="Ingrese su email" required>
+                            <label for="floatingInput">Ingrese su email</label>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" 
+                                pattern="^(?=.*[0-9])(?=.*[a-zA-Z]).{6,}$" required>
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        
+                        <p class="text-start small text-muted">
+                            La contraseña debe contener al menos 6 caracteres, un número y una letra (mayúscula o minúscula).
+                        </p>
+                        
+                        <div class="form-check text-start mb-3">
+                            <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Recordar</label>
+                        </div>
+                        
+                        <button class="btn btn-lg btn-primary custom-btn-form" type="submit">Enviar Registro</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5">
+
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">PÁGINA DE CONTACTO</h2>
+                    
+                    <form id="contactForm" class="p-4 bg-white rounded shadow-sm text-dark">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Introduce tu nombre" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="tel" class="form-control" id="phone" name="phone" pattern="^\+\d{1,3}\s?\d{4,}$" placeholder="Introduce tu número de teléfono (Ej: +56952480417)" required>
+                                <div class="form-text text-start">Formato requerido: +código país y número.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduce tu dirección" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <select id="requestType" class="form-select" name="requestType" required>
+                                <option selected disabled value="">Selecciona Tipo de Solicitud</option>
+                                <option value="consulta">Consulta</option>
+                                <option value="error del sistema">Error del sistema</option>
+                                <option value="reclamo">Reclamo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <textarea id="message" class="form-control" name="message" placeholder="Introduce tu mensaje" rows="4" required></textarea>
+                        </div>
+                        
+                        <button class="btn btn-lg btn-secondary" type="submit">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5">
+
+            <div class="row justify-content-center my-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-4">DATOS DE RAZAS (API EXTERNA)</h2>
+                    <table id="apiDataTable" class="display table table-striped table-bordered table-dark" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Raza Principal</th>
+                                <th>Sub-Razas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6 text-center">
+                    <h2 class="section-title mb-4">IMÁGENES DE RAZAS</h2>
+                    <button class="btn btn-primary custom-btn-form mb-3" id="randomDogButton">Mostrar Imagen Aleatoria de Perro</button>
+                    
+                    <div class="card bg-light p-3">
+                        <img id="randomDogImage" src="https://via.placeholder.com/300x200?text=Presiona+el+botón" alt="Imagen de un perro aleatorio" class="img-fluid rounded mx-auto d-block" style="max-height: 300px;">
+                        <p id="breedName" class="comic-font-dark mt-3 p-2 rounded" style="background-color: #eee; font-weight: bold;"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-4">INFORMACIÓN DE CONTACTO</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-dark table-striped align-middle">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>Teléfono</th>
+                                    <th>Instagram</th>
+                                    <th>TikTok</th>
+                                    <th>Twitter</th>
+                                    <th>Dirección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+56951517865</td>
+                                    <td>@ANIMALADAS</td>
+                                    <td>ANIMALADAS.tiktok.com</td>
+                                    <td>ANIMALADAS.twitter.com</td>
+                                    <td>Santiago de Chile, RM, Paseo Ahumada 125</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <footer>
+        <div class="container footer-links py-3">
+            <div class="row text-center justify-content-around">
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">CONTACTANOS</p>
+                    <a href="index10.html">
+                        <img src="../img/TELEFONO.png" alt="TELEFONO" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">MUESTRAS REDES SOCIALES</p>
+                    <a href="index10.html">
+                        <img src="../img/redes_sociales.jpg" alt="redes_sociales" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">UBICANOS EN SANTIAGO DE CHILE</p>
+                    <a href="index10.html">
+                        <img src="../img/ubicanos.jpg" alt="Ubicanos" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid copyright-area p-2 text-center">
+            <p class="mb-0">DERECHOS DE AUTOR</p>
+            <p class="mb-0">© 2024 EFREN TOVAR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+
+    <script>
+        // Lógica de SweetAlert2 y formularios
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (this.checkValidity()) {
+                Swal.fire({
+                    title: '¡Éxito! ahora puedes avanzar',
+                    text: 'Formulario de registro enviado correctamente.',
+                    icon: 'success'
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Por favor, completa todos los campos requeridos con tu información.',
+                    icon: 'error'
+                });
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (this.checkValidity()) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "¡Éxito! Mensaje de contacto enviado.",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Por favor, completa todos los campos requeridos con tu información.',
+                    icon: 'error'
+                });
+            }
+        });
+        
+        // Lógica de API y DataTables
+        $(document).ready(function() {
+            // Función para obtener datos de la API de Dog CEO y mostrarlos en la tabla
+            function loadDogCeoData() {
+                $.ajax({
+                    url: 'https://dog.ceo/api/breeds/list/all',
+                    method: 'GET',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            const breeds = response.message;
+                            let data = [];
+                            let id = 1;
+                            for (let breed in breeds) {
+                                // Asegura que las subrazas se muestren bien o ponga '-' si no hay
+                                const subBreeds = breeds[breed].length > 0 ? breeds[breed].join(', ') : '-';
+                                data.push({ id: id++, name: breed, subBreeds: subBreeds });
+                            }
+                            $('#apiDataTable').DataTable({
+                                data: data,
+                                columns: [
+                                    { data: 'id' },
+                                    { data: 'name' },
+                                    { data: 'subBreeds' }
+                                ],
+                                dom: 'Bfrtip',
+                                buttons: [
+                                    'copy', 'csv', 'excel', 'pdf', 'print', 'colvis'
+                                ]
+                            });
+                        }
+                    },
+                    error: function(error) {
+                        console.error('Error al obtener los datos de la API de Dog CEO', error);
+                        // Mostrar un mensaje al usuario en caso de error
+                        $('#apiDataTable tbody').html('<tr><td colspan="3">Error al cargar datos de razas. Intenta más tarde.</td></tr>');
+                    }
+                });
+            }
+        
+            // Función para obtener y mostrar imagen aleatoria
+            document.getElementById('randomDogButton').addEventListener('click', function() {
+                fetch('https://dog.ceo/api/breeds/image/random')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('randomDogImage').src = data.message;
+                        // Extraer el nombre de la raza del enlace de la imagen
+                        const breedPath = data.message.split('/')[4];
+                        const breed = breedPath.split('-').reverse().join(' ').toUpperCase(); // Maneja sub-razas
+                        document.getElementById('breedName').innerText = "RAZA: " + breed;
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener la imagen:', error);
+                        document.getElementById('breedName').innerText = "Error al cargar la imagen.";
+                    });
+            });
+
+            // Cargar los datos al cargar la página
+            loadDogCeoData();
+        });
+    </script>
+</body>
+</html>

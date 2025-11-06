@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet de Mascotas - Controles Médicos</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    
+    <div id="div_barra_inicio_padre">
+        <div id="div_barra_inicio" class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-2">
+            
+            <div class="header-text text-center text-md-start mb-2 mb-md-0">
+                <h2 class="title-large">CARNET DE MASCOTAS</h2>
+                <p class="description-small d-none d-md-block">
+                    Este es el mejor sitio para llevar el control de tu mascota, ya que es tu mejor aliado.
+                </p>
+            </div>
+
+            <div id="div_link_barra_inicio" class="d-flex align-items-center nav-links flex-wrap justify-content-center">
+                <img src="../img/logo.png" alt="logo" class="logo-small"> 
+                
+                <a href="../index.html">INICIO</a>
+                <a href="index2.html">GALERIA</a>
+                <a href="index3.html">PERFIL</a>
+                <a href="index4.html">CONTROLES MEDICOS</a>
+                <a href="index5.html">MEDICAMENTOS</a>
+                <a href="index6.html">TRATAMIENTOS</a>
+                <a href="index7.html">VACUNAS</a>
+                <a href="index8.html">DUEÑO</a>
+                <a href="index9.html">PERFIL DEL DUEÑO</a>
+                <a href="index10.html">REGISTRAR</a>
+
+                <img src="../img/logo.png" alt="logo" class="logo-small">
+            </div>
+        </div>
+    </div>
+    <div id="div_fondo_pagina" class="container-fluid py-5">
+        <div class="container">
+            
+            <div class="text-center mb-5">
+                <h1 class="main-title">CONTROLES MÉDICOS</h1>
+            </div>
+        
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table id="controlesMedicos" class="table table-bordered table-dark table-striped table-hover align-middle">
+                            <thead>
+                                <tr class="text-uppercase">
+                                    <th>NOMBRE DEL MEDICO</th>
+                                    <th>NOMBRE DE LA MASCOTA</th>
+                                    <th>FECHA DEL CONTROL</th>
+                                    <th>PRECIO DE LA CONSULTA</th>
+                                    <th>FECHA DEL PRÓXIMO CONTROL</th>
+                                    <th>OBSERVACIONES</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jose</td>
+                                    <td>Chispa</td>
+                                    <td>16/04/2026</td>
+                                    <td>$20.000</td>
+                                    <td>16/04/2026</td>
+                                    <td>Escribe las observaciones</td>
+                                    <td><button onclick="eliminarFila(this)" class="btn btn-danger btn-sm">Eliminar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button onclick="agregarFila()" class="btn btn-success btn-lg custom-btn-table">AGREGAR NUEVO CONTROL</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        // Función para eliminar una fila de la tabla
+        function eliminarFila(element){
+            // Usa confirmación de SweetAlert2 antes de eliminar
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esta acción.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    element.closest('tr').remove();
+                    Swal.fire(
+                        '¡Eliminado!',
+                        'El control médico ha sido eliminado.',
+                        'success'
+                    )
+                }
+            })
+        }
+
+        // Función para agregar una fila (Abre el modal SweetAlert2)
+        function agregarFila() {
+            Swal.fire({
+                title: "<strong><u>Registro de Control Médico</u></strong>",
+                icon: "info",
+                html: `
+                <div class="container text-start">
+                    <div class="mb-3">
+                        <label for="medico" class="form-label">Nombre del Médico</label>
+                        <input class="form-control" type="text" id="medico" placeholder="Dr. Juan Pérez" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mascota" class="form-label">Nombre de la Mascota</label>
+                        <input class="form-control" type="text" id="mascota" placeholder="Chispa" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fechaControl" class="form-label">Fecha del Control</label>
+                        <input class="form-control" type="date" id="fechaControl" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio de la Consulta</label>
+                        <input class="form-control" type="number" id="precio" placeholder="$20000" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="proxControl" class="form-label">Fecha del Próximo Control</label>
+                        <input class="form-control" type="date" id="proxControl" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observaciones" class="form-label">Observaciones</label>
+                        <textarea class="form-control" id="observaciones" rows="2" placeholder="Diagnóstico, notas, etc."></textarea>
+                    </div>
+                </div>
+                `,
+                showCloseButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Guardar Control',
+                cancelButtonText: 'Cancelar',
+                focusConfirm: false,
+                preConfirm: () => {
+                    // Recolección de datos
+                    const medico = document.getElementById('medico').value;
+                    const mascota = document.getElementById('mascota').value;
+                    const fechaControl = document.getElementById('fechaControl').value;
+                    const precio = document.getElementById('precio').value;
+                    const proxControl = document.getElementById('proxControl').value;
+                    const observaciones = document.getElementById('observaciones').value;
+
+                    // Validación simple de campos obligatorios
+                    if (medico && mascota && fechaControl && precio && proxControl) {
+                        // Formatea la fecha de YYYY-MM-DD a DD/MM/YYYY si se desea
+                        const formatFecha = (dateString) => {
+                            if (!dateString) return '';
+                            const [year, month, day] = dateString.split('-');
+                            return `${day}/${month}/${year}`;
+                        };
+                        
+                        agregarFilaTabla(medico, mascota, formatFecha(fechaControl), `$${precio}`, formatFecha(proxControl), observaciones);
+                    } else {
+                        Swal.showValidationMessage('Por favor, completa todos los campos obligatorios.');
+                        return false; 
+                    }
+                },
+            });
+        }
+
+        // Función para insertar la nueva fila en la tabla
+        function agregarFilaTabla(medico, mascota, fechaControl, precio, proxControl, observaciones) {
+            const table = document.getElementById('controlesMedicos').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+
+            newRow.innerHTML = `
+                <td>${medico}</td>
+                <td>${mascota}</td>
+                <td>${fechaControl}</td>
+                <td>${precio}</td>
+                <td>${proxControl}</td>
+                <td>${observaciones}</td>
+                <td><button onclick="eliminarFila(this)" class="btn btn-danger btn-sm">Eliminar</button></td>
+            `;
+        }
+    </script>
+    
+    <footer>
+        <div class="container footer-links py-3">
+            <div class="row text-center justify-content-around">
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">CONTACTANOS</p>
+                    <a href="index10.html">
+                        <img src="../img/TELEFONO.png" alt="TELEFONO" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">MUESTRAS REDES SOCIALES</p>
+                    <a href="index10.html">
+                        <img src="../img/redes_sociales.jpg" alt="redes_sociales" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">UBICANOS EN SANTIAGO DE CHILE</p>
+                    <a href="index10.html">
+                        <img src="../img/ubicanos.jpg" alt="Ubicanos" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid copyright-area p-2 text-center">
+            <p class="mb-0">DERECHOS DE AUTOR</p>
+            <p class="mb-0">© 2024 EFREN TOVAR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+</body>
+</html>

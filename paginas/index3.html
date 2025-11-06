@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet de Mascotas - Perfil y Solicitud GPS</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link rel="stylesheet" href="../css/estilo.css"> 
+</head>
+<body>
+    
+    <div id="div_barra_inicio_padre">
+        <div id="div_barra_inicio" class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-2">
+            
+            <div class="header-text text-center text-md-start mb-2 mb-md-0">
+                <h2 class="title-large">CARNET DE MASCOTAS</h2>
+                <p class="description-small d-none d-md-block">
+                    Este es el mejor sitio para llevar el control de tu mascota, ya que es tu mejor aliado.
+                </p>
+            </div>
+
+            <div id="div_link_barra_inicio" class="d-flex align-items-center nav-links flex-wrap justify-content-center">
+                <img src="../img/logo.png" alt="logo" class="logo-small"> 
+                
+                <a href="../index.html">INICIO</a>
+                <a href="index2.html">GALERIA</a>
+                <a href="index3.html">PERFIL</a>
+                <a href="index4.html">CONTROLES MEDICOS</a>
+                <a href="index5.html">MEDICAMENTOS</a>
+                <a href="index6.html">TRATAMIENTOS</a>
+                <a href="index7.html">VACUNAS</a>
+                <a href="index8.html">DUEÑO</a>
+                <a href="index9.html">PERFIL DEL DUEÑO</a>
+                <a href="index10.html">REGISTRAR</a>
+
+                <img src="../img/logo.png" alt="logo" class="logo-small">
+            </div>
+        </div>
+    </div>
+    <div id="div_fondo_pagina" class="container-fluid py-5">
+        <div class="container">
+            
+            <div class="row justify-content-end mb-5">
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/logo.png" alt="logo" class="img-fluid logo-small-content">
+                </div>
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/GPS.jpg" alt="GPS" class="img-fluid logo-small-content">
+                </div>
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/notificaciones.jpg" alt="Notificaciones" class="img-fluid logo-small-content">
+                </div>
+            </div>
+
+            <div class="text-center my-5">
+                <h1 class="main-title display-1">PERFIL</h1>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6 text-center">
+                    <h2 class="section-title mb-4">FORMULARIO PARA LA SOLICITUD DE GPS</h2>
+                    
+                    <form id="gpsForm" action="/submit_gps" method="post" class="needs-validation" novalidate>
+                        
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Introduce tu nombre" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9+ ]{8,}" placeholder="Introduce tu número del gps" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Introduce tu dirección" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <select id="requestType" class="form-select" name="requestType" required>
+                                <option selected disabled value="">Selecciona tipo de solicitud</option>
+                                <option value="solicitud">SOLICITUD DE GPS</option>
+                                <option value="falla">FALLA DEL GPS</option>
+                                <option value="asistencia">ASISTENCIA DE IMPLEMENTACION DE GPS</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <textarea id="message" class="form-control" name="message" placeholder="Introduce tu mensaje" rows="4" required></textarea>
+                        </div>
+                        
+                        <button class="btn btn-primary custom-btn-form" type="submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-5">
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-4">PERFIL DE LA MASCOTA</h2>
+                    
+                    <form id="perfilMascotaForm" action="/submit_perfil" method="post" class="needs-validation" novalidate>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Especie</th>
+                                        <th>ID Mascota</th>
+                                        <th>Raza</th>
+                                        <th>Color</th>
+                                        <th>Nombre</th>
+                                        <th>Fecha de Nacimiento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="text" class="form-control" id="especie" name="especie" placeholder="Perro" required></td>
+                                        <td><input type="number" class="form-control" id="id_mascota" name="id_mascota" placeholder="18168947" required></td>
+                                        <td><input type="text" class="form-control" id="raza" name="raza" placeholder="Lobo Siberiano" required></td>
+                                        <td><input type="text" class="form-control" id="color" name="color" placeholder="Gris, Negro, Blanco" required></td>
+                                        <td><input type="text" class="form-control" id="nombre" name="nombre" placeholder="CHISPA" required></td>
+                                        <td><input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <div class="btn-group" role="group" aria-label="Sexo de la Mascota">
+                                <input type="radio" class="btn-check" name="sexo" id="macho" autocomplete="off" required>
+                                <label class="btn btn-outline-secondary" for="macho">Macho</label>
+
+                                <input type="radio" class="btn-check" name="sexo" id="hembra" autocomplete="off" required>
+                                <label class="btn btn-outline-secondary" for="hembra">Hembra</label>
+                            </div>
+                            
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-success custom-btn-form">Guardar Perfil</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+    </div>
+    <footer>
+        <div class="container footer-links py-3">
+            <div class="row text-center justify-content-around">
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">CONTACTANOS</p>
+                    <a href="index10.html">
+                        <img src="../img/TELEFONO.png" alt="TELEFONO" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">MUESTRAS REDES SOCIALES</p>
+                    <a href="index10.html">
+                        <img src="../img/redes_sociales.jpg" alt="redes_sociales" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">UBICANOS EN SANTIAGO DE CHILE</p>
+                    <a href="index10.html">
+                        <img src="../img/ubicanos.jpg" alt="Ubicanos" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid copyright-area p-2 text-center">
+            <p class="mb-0">DERECHOS DE AUTOR</p>
+            <p class="mb-0">© 2024 EFREN TOVAR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const forms = document.querySelectorAll("form");
+
+            forms.forEach(form => {
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault(); 
+                    form.classList.add('was-validated'); // Muestra la validación nativa de Bootstrap
+
+                    if (form.checkValidity()) {
+                        Swal.fire({
+                            title: '¡Éxito!',
+                            text: 'Formulario enviado correctamente.',
+                            icon: 'success'
+                        });
+                        // Si deseas reiniciar el formulario después del éxito: form.reset();
+                        form.classList.remove('was-validated'); // Opcional: quita el feedback visual después del envío
+                    } else {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Por favor, completa todos los campos requeridos con tu información.',
+                            icon: 'error'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

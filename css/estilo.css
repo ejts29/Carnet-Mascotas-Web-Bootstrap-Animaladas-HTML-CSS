@@ -1,0 +1,236 @@
+/*
+// Variables y Reseteo Básico
+*/
+
+/* Definición de fuentes y colores base */
+:root {
+    /* Color de Fondo Unificado y Solicitado: rgb(65, 156, 177) */
+    --background-color-main: rgb(65, 156, 177); 
+    
+    /* Colores para asegurar el contraste sobre el fondo azul-verde */
+    --primary-color: rgb(255, 255, 255); /* Texto principal blanco */
+    --secondary-color: rgb(0, 3, 7); /* Color de acento/títulos (oscuro) */
+    
+    /* Fondos unificados */
+    --background-bar: var(--background-color-main);
+    --background-page: var(--background-color-main); 
+
+    --font-family-comic: 'Comic Sans MS', cursive, sans-serif;
+
+    /* Tamaño unificado para iconos pequeños (barra de inicio y footer) */
+    --icon-small-size: 40px; 
+    /* Tamaño específico para el ícono de Redes Sociales en el footer */
+    --icon-large-size: 150px; 
+}
+
+/* Aplicar una tipografía base y hacer las imágenes responsivas por defecto */
+body {
+    font-family: var(--font-family-comic);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Clases de tipografía base para reutilizar */
+.comic-font {
+    font-family: var(--font-family-comic);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 
+// BARRA DE INICIO (#div_barra_inicio_padre y #div_barra_inicio)
+ */
+
+#div_barra_inicio_padre {
+    background-color: var(--background-bar); 
+    background-image: none; /* Eliminar la imagen de fondo */
+    height: auto;
+    padding: 10px 0;
+}
+
+#div_barra_inicio {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* Títulos y descripción en la barra */
+.header-text {
+    color: var(--secondary-color); 
+}
+
+.title-large {
+    font-size: 1.8rem; 
+    color: var(--secondary-color); /* Título en oscuro para destacar */
+    margin: 0;
+}
+
+.description-small {
+    font-size: 0.9rem;
+    color: var(--secondary-color); /* Descripción en oscuro */
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+/* Navegación (Enlaces) */
+#div_link_barra_inicio {
+    gap: 10px;
+}
+
+.nav-links a {
+    color: var(--primary-color); /* Enlaces en blanco */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: yellow; /* Hover en amarillo para mejor visibilidad */
+}
+
+/* Logos en la barra de navegación (Ajuste unificado) */
+.logo-small {
+    width: var(--icon-small-size); /* Unificado a 40px */
+    height: var(--icon-small-size); /* Unificado a 40px */
+}
+
+/* 
+// CONTENIDO PRINCIPAL (#div_fondo_pagina)
+*/
+
+#div_fondo_pagina {
+    background-color: var(--background-page); /* Color unificado */
+    min-height: 100vh;
+    padding: 40px 0;
+    color: var(--primary-color); /* Aseguramos que el texto normal sea blanco */
+}
+
+.main-title {
+    font-size: clamp(2rem, 5vw, 2.5rem); 
+    color: var(--secondary-color); /* El título principal sigue siendo oscuro para destacar */
+    margin-bottom: 2rem;
+}
+
+/* Texto de la descripción */
+.section-description p {
+    color: var(--primary-color); 
+}
+
+.section-title, .section-subtitle {
+    font-weight: bold;
+    color: var(--secondary-color); /* Títulos de sección en oscuro */
+}
+
+/* Lista de características */
+.list-styled {
+    list-style-type: square;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    text-align: left;
+    color: var(--primary-color); /* Texto de las listas en blanco */
+}
+
+/* Botón Modal */
+.custom-btn {
+    background-color: #ffc107; /* Amarillo de ejemplo (Bootstrap warning) */
+    border-color: #ffc107;
+    color: var(--secondary-color); /* Texto oscuro para el botón */
+    font-weight: bold;
+}
+
+.custom-btn:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+
+/* 
+// PIE DE PÁGINA (FOOTER)
+*/
+
+footer {
+    background-color: var(--background-color-main); /* Color unificado */
+    color: var(--primary-color); /* Texto del footer en blanco */
+    border-top: 2px solid var(--secondary-color); /* Línea divisoria */
+}
+
+.footer-links {
+    max-width: 1200px;
+}
+
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Regla por defecto para iconos de Teléfono y Ubicación */
+.footer-links img {
+    width: var(--icon-small-size); /* 40px */
+    height: var(--icon-small-size); /* 40px */
+    object-fit: contain; 
+    transition: transform 0.3s;
+}
+
+/* Regla ESPECÍFICA para el ícono de Redes Sociales (Tamaño grande) */
+.footer-links img[alt="redes_sociales"] {
+    width: var(--icon-large-size); /* 150px */
+    height: auto; /* Mantiene la proporción */
+}
+
+.footer-links img:hover {
+    transform: scale(1.1); /* Ligero aumento al pasar el ratón */
+}
+
+.copyright-area {
+    background-color: var(--secondary-color); /* Fondo oscuro para el copyright */
+    font-size: 0.8rem;
+}
+
+/* MEDIA QUERIES (Responsividad) */
+
+
+/* Pantallas Medianas (Tablets y Desktop) */
+@media (min-width: 768px) {
+    /* Ajustes para la barra de inicio en pantallas medianas */
+    #div_barra_inicio {
+        flex-direction: row; /* Volver a horizontal */
+        justify-content: space-between;
+    }
+    
+    .header-text {
+        text-align: left;
+    }
+
+    .title-large {
+        font-size: 2rem;
+    }
+    
+    .description-small {
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas Grandes (Desktop) */
+@media (min-width: 992px) {
+    .title-large {
+        font-size: 2.2rem;
+    }
+
+    .description-small {
+        font-size: 1.1rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        margin-left: 15px;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+}

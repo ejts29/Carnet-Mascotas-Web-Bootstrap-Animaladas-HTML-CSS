@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet de Mascotas - Galería</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    
+    <div id="div_barra_inicio_padre">
+        <div id="div_barra_inicio" class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-2">
+            
+            <div class="header-text text-center text-md-start mb-2 mb-md-0">
+                <h2 class="title-large">CARNET DE MASCOTAS</h2>
+                <p class="description-small d-none d-md-block">
+                    Este es el mejor sitio para llevar el control de tu mascota ya que es tu mejor aliado.
+                </p>
+            </div>
+
+            <div id="div_link_barra_inicio" class="d-flex align-items-center nav-links flex-wrap justify-content-center">
+                <img src="../img/logo.png" alt="logo" class="logo-small"> 
+                
+                <a href="../index.html">INICIO</a>
+                <a href="index2.html">GALERIA</a>
+                <a href="index3.html">PERFIL</a>
+                <a href="index4.html">CONTROLES MEDICOS</a>
+                <a href="index5.html">MEDICAMENTOS</a>
+                <a href="index6.html">TRATAMIENTOS</a>
+                <a href="index7.html">VACUNAS</a>
+                <a href="index8.html">DUEÑO</a>
+                <a href="index9.html">PERFIL DEL DUEÑO</a>
+                <a href="index10.html">REGISTRAR</a>
+
+                <img src="../img/logo.png" alt="logo" class="logo-small">
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary p-2">
+            <div class="container-fluid">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: var(--secondary-color);">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <form class="d-flex ms-auto">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
+        
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="p-4" style="background-color: var(--background-color-main);">
+                <h4 class="text-white">Información sobre perros (barra de navegación secundaria)</h4>
+                <ul class="navbar-nav flex-column">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">La taxonomía de los perros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">El origen de los perros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Características físicas de los perros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">La conducta social del perro</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">La alimentación del perro</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Los sentidos del perro</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Las razas de perros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">entrenamiento del perro</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="div_fondo_pagina" class="container-fluid py-5">
+        <div class="container">
+            
+            <div class="row justify-content-end mb-5">
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/logo.png" alt="logo" class="img-fluid logo-small-content">
+                </div>
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/GPS.jpg" alt="GPS" class="img-fluid logo-small-content">
+                </div>
+                <div class="col-4 col-sm-3 col-md-2 text-center">
+                    <img src="../img/notificaciones.jpg" alt="Notificaciones" class="img-fluid logo-small-content">
+                </div>
+                <div class="col-12 text-center mt-3">
+                    <button type="button" class="btn btn-primary custom-btn" data-bs-toggle="modal" data-bs-target="#gpsModal">
+                        PINCHE AQUÍ PARA INFORMACIÓN SOBRE EL GPS (BOTÓN MODAL)
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center my-5">
+                <h1 class="main-title">GALERIAS IMAGENES</h1>
+            </div>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-10 col-lg-8">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../img/perro1.jpg" alt="perro1" class="d-block w-100 carousel-img">
+                                <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                    <h5>Husky Siberiano</h5>
+                                    <p>El husky siberiano tiene las orejas erguidas y los ojos de marrones a azules o también dispares. Llevan un pelo muy denso y afelpado con una importante capa interna.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/perro2.jpg" class="d-block w-100 carousel-img" alt="perro2">
+                                <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                    <h5>Carácter Husky Siberiano</h5>
+                                    <p>Es extrovertido, tiene un carácter afable, gran ética de trabajo, y gran instinto cazador. Si no desfoga su energía con deporte regular, puede llegar a ser destructivo.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/perro3.jpg" class="d-block w-100 carousel-img" alt="perro3">
+                                <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                    <h5>Husky Siberiano - Tamaño y Peso</h5>
+                                    <p>Es una raza de tamaño mediano cuyo peso oscila entre los 20 y los 27 kg en machos. La altura de los machos va de los 53 a los 60 cm.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/perro4.jpg" class="d-block w-100 carousel-img" alt="perro4">
+                                <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                    <h5>Husky Siberiano - Alimentación</h5>
+                                    <p>Al igual que el resto de las razas, la cantidad de comida dependerá del tamaño, peso y estado de salud del perro. Lo más importante es que corresponda con el nivel de actividad.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5 align-items-stretch">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="../img/perro1.jpg" class="card-img-top card-image-fixed" alt="perro1"> 
+                        <div class="card-body">
+                            <h5 class="card-title text-center comic-font-dark">CHISPA</h5>
+                            <p class="card-text text-center text-dark">Es un perro de la raza husky, tiene 2 años de edad.</p>
+                            <div class="text-center">
+                                <a href="index3.html" class="btn btn-primary">Pinchar aquí si deseas saber más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button comic-font-dark" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    Información Desplegable #1
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <strong class="comic-font-dark">Acá está la información general del perro.</strong> Husky siberiano. El husky siberiano tiene las orejas erguidas y los ojos de marrones a azules o también dispares. Lleva el cuello recto y la línea superior está nivelada.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed comic-font-dark" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                    Información Desplegable #2
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong class="comic-font-dark">Carácter husky siberiano.</strong> El husky siberiano tiene un carácter afable, una gran ética de trabajo y un gran instinto cazador. Es extrovertido a la hora de conocer a nuevas personas, niños y otros perros.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed comic-font-dark" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                    Información Desplegable #3
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <strong class="comic-font-dark">Husky siberiano tamaño y peso.</strong> Es una raza de tamaño mediano cuyo peso oscila entre los 20 y los 27 kg en machos y entre los 16 y los 23 kg en hembras.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-end my-5">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <img src="../img/perro2.jpg" class="card-img-top card-image-fixed" alt="perro2"> 
+                        <div class="card-body">
+                            <h5 class="card-title text-center comic-font-dark">CHISPA</h5>
+                            <p class="card-text text-center text-dark">Es un perro de la raza husky, tiene 2 años de edad.</p>
+                            <div class="text-center">
+                                <a href="index3.html" class="btn btn-primary">Pinchar aquí si deseas saber más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="modal fade" id="gpsModal" tabindex="-1" aria-labelledby="gpsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="gpsModalLabel">API DE GEOLOCALIZACIÓN GPS</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    La API de geolocalización permite al usuario compartir su ubicación a las aplicaciones web si así lo desea. Por razones de privacidad, al usuario se le pide que confirme el permiso para proporcionar información de ubicación.
+                    <br><br>
+                    Las WebExtensions que deseen utilizar el objeto Geolocation deben agregar el permiso "geolocation" a su manifiesto. El sistema operativo del usuario le indicará que permita el acceso a la ubicación la primera vez que se solicite.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
+                    <a href="index3.html" class="btn btn-primary" role="button">
+                        SOLICITUD GPS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-links py-3">
+            <div class="row text-center justify-content-around">
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">CONTACTANOS</p>
+                    <a href="index10.html">
+                        <img src="../img/TELEFONO.png" alt="TELEFONO" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">MUESTRAS REDES SOCIALES</p>
+                    <a href="index10.html">
+                        <img src="../img/redes_sociales.jpg" alt="redes_sociales" class="img-fluid">
+                    </a>
+                </div>  
+                
+                <div class="col-md-4 mb-3">
+                    <p class="footer-title">UBICANOS EN SANTIAGO DE CHILE</p>
+                    <a href="index10.html">
+                        <img src="../img/ubicanos.jpg" alt="Ubicanos" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid copyright-area p-2 text-center">
+            <p class="mb-0">DERECHOS DE AUTOR</p>
+            <p class="mb-0">© 2024 EFREN TOVAR. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
