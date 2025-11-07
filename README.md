@@ -35,7 +35,7 @@ Este proyecto es completamente estático (HTML, CSS, JS), lo que permite publica
 
  Puedes ver el resultado final haciendo clic en el siguiente enlace:
 
-[🔗 Abrir Carnet Mascotas en GitHub Pages](https://ejts29.github.io/Carnet-Mascotas-Web-Bootstrap-Animaladas-HTML-CSS/index.html)
+[![Ver Portal Web](https://img.shields.io/badge/DEMO%20EN%20VIVO-Abrir-blue?style=for-the-badge&logo=githubpages&logoColor=white)](https://ejts29.github.io/Carnet-Mascotas-Web-Bootstrap-Animaladas-HTML-CSS/index.html?embed=true)
 
 
 ---
